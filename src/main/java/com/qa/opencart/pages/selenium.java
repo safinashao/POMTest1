@@ -1,6 +1,9 @@
 package com.qa.opencart.pages;
 
-public class Selenium {
+public class SeleniumRevis {
 	
-	int i = 10;
+	public void setUpTime() {
+		
+		System.currentTimeMillis();
+	}
 	
