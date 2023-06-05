@@ -1,6 +1,6 @@
 package com.qa.opencart.pages;
 
-public class SeleniumRevis {
+public class selenium {
 	
 	public void setUpTime() {
 		
