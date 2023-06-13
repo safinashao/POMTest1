@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.safari.SafariDriver;
 
 import com.qa.opencart.exception.FrameworkException;
@@ -44,8 +43,8 @@ public class DriverFactory {
 		
 		highlight = prop.getProperty("highlight").trim();
 		String browserName = prop.getProperty("browser").toLowerCase().trim();
-		//String browserName = System.getProperty("browser").toLowerCase().trim();
-		System.out.println("browser name is: " + browserName);
+		//System.out.println("browser name is: " + browserName);
+		
 		
 		if(browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -69,17 +68,54 @@ public class DriverFactory {
 			throw new FrameworkException("NO BROWSER FOUND EXCEPTION");
 		}
 		
+		
+		
 		//driver.manage().window().fullscreen();
 		getDriver().manage().window().maximize();
 		getDriver().manage().deleteAllCookies();
 		getDriver().get(prop.getProperty("url"));
 		return getDriver();
+				
+			
+		//String browserName = System.getProperty("browser").toLowerCase().trim();
+				
+		
+				
+		
 	}
 	
-	//get the local thread copy of the driver
+	/*
+	 * get the local thread copy of the driver
+	 */
+	
 	public synchronized static WebDriver getDriver() {
 		return tlDriver.get();
+		
 	}
+
+	/*
+	 * private void init_remoteDriver(String browser) {
+	 * System.out.println("Running tests on grid server:::" + browser);
+	 * 
+	 * try { switch (browser.toLowerCase()) { case "chrome": tlDriver.set(new
+	 * RemoteWebDriver(new URL(prop.getProperty("huburl")),
+	 * optionsManager.getChromeOptions())); break; case "firefox": tlDriver.set(new
+	 * RemoteWebDriver(new URL(prop.getProperty("huburl")),
+	 * optionsManager.getFirefoxOptions())); break; case "edge": tlDriver.set(new
+	 * RemoteWebDriver(new URL(prop.getProperty("huburl")),
+	 * optionsManager.getEdgeOptions())); break; default:
+	 * System.out.println("please pass the right browser for remote execution..." +
+	 * browser); throw new FrameworkException("NOREMOTEBROWSEREXCEPTION"); } } catch
+	 * (MalformedURLException e) { e.printStackTrace(); }
+	 * 
+	 * }
+	 */
+		
+
+	/*
+	 * get the local thread copy of the driver
+	 */
+	
 	
 	//used to initialize the properties and will return prop reference
 	//FileInputStream is used to interact with other files
