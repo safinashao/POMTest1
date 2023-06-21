@@ -30,17 +30,18 @@ public class BaseTest {
 	protected RegisterPage registerPage;
 	
 	
+	@Parameters({"browser", "browserversion", "testcasename"})
 	@BeforeTest
-	public void setup() {
+	public void setup(String browserName, String browserVersion, String testCaseName) {
 		df = new DriverFactory();
 		prop = df.init_prop(); //stored here
 		
-//		if(browserName!=null) {
-//			prop.setProperty("browser", browserName);
-//			
-//		}
-		
-		
+		if(browserName!=null) {
+			prop.setProperty("browser", browserName);
+			prop.setProperty("browserversion", browserVersion);
+			prop.setProperty("testcasename", testCaseName);
+		}
+	
 		driver = df.init_driver(prop); //same value given to the init_driver 
 		loginPage = new LoginPage(driver); //first page for this ptoject
 		productInfoPage = new ProductInfoPage(driver);

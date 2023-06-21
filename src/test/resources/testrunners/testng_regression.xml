@@ -15,27 +15,56 @@
 
 	
 	
-	<test name="Accounts Page Test_Chrome">
+	<test name="Accounts Page Test_chrome_90.0">
 		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="90.0"/>
+		<parameter name="testcasename" value="Accounts Page Test"/>
+		
 		<classes>
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
 	</test>
 	
-	
-	<test name="Login Page Test_Chrome">
+	<test name="Accounts Page Test_chrome_109.0">
 		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="109.0"/>
+		<parameter name="testcasename" value="Accounts Page Test"/>
 		<classes>
-			<class name="com.qa.opencart.tests.LoginPageTest" />
+			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
 	</test>
 	
-<!--	<test name="Login Page Test_Chrome">-->
-<!--		<parameter name="browser" value="chrome" />-->
-<!--		<classes>-->
-<!--			<class name="com.qa.opencart.tests.LoginPageTest" />-->
-<!--		</classes>-->
-<!--	</test>-->
+	<test name="Accounts Page Test_chrome_79.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="79.0"/>
+		<parameter name="testcasename" value="Accounts Page Test"/>
+		<classes>
+			<class name="com.qa.opencart.tests.AccountsPageTest" />
+		</classes>
+	</test>
+	
+	<!--<test name="Login Page Test_firefox_57">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="57" />
+		<classes>
+			<class name="com.qa.opencart.tests.LoginPageTest" />
+		</classes>
+	</test>-->
+	
+	<!--<test name="Login Page Test_firefox_83">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="83" />
+		<classes>
+			<class name="com.qa.opencart.tests.LoginPageTest" />
+		</classes>
+	</test>-->
+	
+	<!--<test name="Login Page Test_edge">
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="com.qa.opencart.tests.LoginPageTest" />
+		</classes>
+	</test>-->
 
 	<!--<test name="Login Page Test_firefox57">
 		<parameter name="browser" value="firefox" />
